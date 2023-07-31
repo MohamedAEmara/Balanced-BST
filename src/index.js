@@ -7,7 +7,7 @@ import { postOrder } from './postOrder';
 import { height } from './height';
 import { depth } from './depth';
 import { isBalanced } from './isBalanced';
-
+import { rebalance } from './rebalance';
 
 function sortAndRemoveDuplicates(arr) {
     // Sort the array
@@ -108,3 +108,22 @@ if(isBalanced(tree.root) == 1) {
 } else {
     console.log("The tree is not balanced :(");
 }
+
+
+tree.insert(200);
+// tree.insert(101);
+tree.graph();
+
+console.log(isBalanced(tree.root));
+
+if(isBalanced(tree.root) == 1) {
+    console.log("The tree is balanced :)");
+} else {
+    console.log("The tree is not balanced :(");
+}
+
+
+
+tree.root = rebalance(tree.root);
+
+tree.graph();
